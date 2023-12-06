@@ -115,6 +115,34 @@ class MockGameRemoteDatasource extends _i1.Mock
       ) as _i6.Future<_i2.Either<_i7.Failure, _i8.GamesResponse>>);
 }
 
+/// A class which mocks [GameUseCase].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGameUseCase extends _i1.Mock implements _i9.GameUseCase {
+  MockGameUseCase() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i6.Future<_i2.Either<_i7.Failure, _i8.GamesResponse>> call(
+          _i9.GameParams? params) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [params],
+        ),
+        returnValue:
+            _i6.Future<_i2.Either<_i7.Failure, _i8.GamesResponse>>.value(
+                _FakeEither_0<_i7.Failure, _i8.GamesResponse>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+      ) as _i6.Future<_i2.Either<_i7.Failure, _i8.GamesResponse>>);
+}
+
 /// A class which mocks [BuildContext].
 ///
 /// See the documentation for Mockito's code generation for more information.

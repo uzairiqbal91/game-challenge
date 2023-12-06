@@ -2,9 +2,9 @@ import 'package:gamechallange/data/datasources/game_remote_datasource.dart';
 import 'package:gamechallange/data/repository/game_repository_impl.dart';
 import 'package:gamechallange/domain/repository/game_repository.dart';
 import 'package:gamechallange/domain/usecase/game_usecase.dart';
-import 'package:gamechallange/presentation/screens/dashboard/game_cubit/game_cubit.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../presentation/screens/dashboard/cubit/game_cubit.dart';
 import '../services/dio_client.dart';
 
 GetIt sl = GetIt.instance;

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gamechallange/data/models/games_response.dart';
 import 'package:gamechallange/domain/usecase/game_usecase.dart';
-import 'package:gamechallange/presentation/screens/dashboard/game_cubit/game_cubit.dart';
 import 'package:gamechallange/presentation/screens/dashboard/widgets/game_item_widget.dart';
 import 'package:gamechallange/presentation/screens/dashboard/widgets/game_items_skeleton_widget.dart';
 import 'package:gamechallange/presentation/widgets/base_widget.dart';
@@ -13,6 +12,7 @@ import '../../../core/constants/app_constatns.dart';
 import '../../../core/constants/pallete.dart';
 import '../../widgets/empty.dart';
 import '../../widgets/laoding.dart';
+import 'cubit/game_cubit.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -31,7 +31,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   void initState() {
     super.initState();
 
-    context.read<GameCubit>().fetchGames(const GameParams());
+    // context.read<GameCubit>().fetchGames(const GameParams());
 
     _scrollController.addListener(() async {
       if (_scrollController.position.atEdge) {
@@ -53,6 +53,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       child: RefreshIndicator(
         color: Palette.primary,
         backgroundColor: Palette.bacgrkound,
+
         onRefresh: () {
           _currentPage = 1;
           _isLastPage = false;
@@ -65,17 +66,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
         child: BlocBuilder<GameCubit, GameState>(
           builder: (_, state) {
             return state.when(
-              loading: () =>  Center(
+              loading: () => Center(
                   child: ListView.builder(
-
-                    itemCount: 6,
-                    itemBuilder: (_, index) {
-                      return GameItemSkeletonWidget();
-
-                    },
-                  )
-
-              ),
+                    physics: const AlwaysScrollableScrollPhysics(),
+                itemCount: 6,
+                itemBuilder: (_, index) {
+                  return GameItemSkeletonWidget();
+                },
+              )),
               success: (data) {
                 _games.addAll(data.results ?? []);
                 _isLastPage = data.next == null ? true : false;
@@ -83,6 +81,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 return ListView.builder(
                   controller: _scrollController,
                   itemCount: _isLastPage ? _games.length : _games.length + 1,
+                  physics: const AlwaysScrollableScrollPhysics(),
                   itemBuilder: (_, index) {
                     return index < _games.length
                         ? GameItemWidget(
