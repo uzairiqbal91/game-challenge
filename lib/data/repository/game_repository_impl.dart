@@ -15,9 +15,9 @@ class GameRepositoryImpl implements GameRepository {
 
 
   @override
-  Future<Either<Failure, GamesResponse>> gameResponse(GameParams usersParams) async {
+  Future<Either<Failure, GamesResponse>> gameResponse(GameParams gameParams) async {
     // TODO: implement gameResponse
-    final response = await gameRemoteDatasource.games(usersParams);
+    final response = await gameRemoteDatasource.games(gameParams);
 
     return response.fold(
           (failure) => Left(failure),

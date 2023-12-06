@@ -21,6 +21,11 @@ GameParams _$GameParamsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GameParams {
   int get page => throw _privateConstructorUsedError;
+  int get page_size => throw _privateConstructorUsedError;
+  int get platforms => throw _privateConstructorUsedError;
+  String get dates => throw _privateConstructorUsedError;
+  String get ordering => throw _privateConstructorUsedError;
+  String get key => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +39,13 @@ abstract class $GameParamsCopyWith<$Res> {
           GameParams value, $Res Function(GameParams) then) =
       _$GameParamsCopyWithImpl<$Res, GameParams>;
   @useResult
-  $Res call({int page});
+  $Res call(
+      {int page,
+      int page_size,
+      int platforms,
+      String dates,
+      String ordering,
+      String key});
 }
 
 /// @nodoc
@@ -51,12 +62,37 @@ class _$GameParamsCopyWithImpl<$Res, $Val extends GameParams>
   @override
   $Res call({
     Object? page = null,
+    Object? page_size = null,
+    Object? platforms = null,
+    Object? dates = null,
+    Object? ordering = null,
+    Object? key = null,
   }) {
     return _then(_value.copyWith(
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
+      page_size: null == page_size
+          ? _value.page_size
+          : page_size // ignore: cast_nullable_to_non_nullable
+              as int,
+      platforms: null == platforms
+          ? _value.platforms
+          : platforms // ignore: cast_nullable_to_non_nullable
+              as int,
+      dates: null == dates
+          ? _value.dates
+          : dates // ignore: cast_nullable_to_non_nullable
+              as String,
+      ordering: null == ordering
+          ? _value.ordering
+          : ordering // ignore: cast_nullable_to_non_nullable
+              as String,
+      key: null == key
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -69,7 +105,13 @@ abstract class _$$GameParamsImplCopyWith<$Res>
       __$$GameParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int page});
+  $Res call(
+      {int page,
+      int page_size,
+      int platforms,
+      String dates,
+      String ordering,
+      String key});
 }
 
 /// @nodoc
@@ -84,12 +126,37 @@ class __$$GameParamsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? page = null,
+    Object? page_size = null,
+    Object? platforms = null,
+    Object? dates = null,
+    Object? ordering = null,
+    Object? key = null,
   }) {
     return _then(_$GameParamsImpl(
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
+      page_size: null == page_size
+          ? _value.page_size
+          : page_size // ignore: cast_nullable_to_non_nullable
+              as int,
+      platforms: null == platforms
+          ? _value.platforms
+          : platforms // ignore: cast_nullable_to_non_nullable
+              as int,
+      dates: null == dates
+          ? _value.dates
+          : dates // ignore: cast_nullable_to_non_nullable
+              as String,
+      ordering: null == ordering
+          ? _value.ordering
+          : ordering // ignore: cast_nullable_to_non_nullable
+              as String,
+      key: null == key
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -97,7 +164,13 @@ class __$$GameParamsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$GameParamsImpl implements _GameParams {
-  const _$GameParamsImpl({this.page = 1});
+  const _$GameParamsImpl(
+      {this.page = 1,
+      this.page_size = 20,
+      this.platforms = 187,
+      this.dates = '2022-12-06,2023-12-06',
+      this.ordering = '-released',
+      this.key = '02ef6ba5d13444ee86bad607e8bce3f4'});
 
   factory _$GameParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GameParamsImplFromJson(json);
@@ -105,10 +178,25 @@ class _$GameParamsImpl implements _GameParams {
   @override
   @JsonKey()
   final int page;
+  @override
+  @JsonKey()
+  final int page_size;
+  @override
+  @JsonKey()
+  final int platforms;
+  @override
+  @JsonKey()
+  final String dates;
+  @override
+  @JsonKey()
+  final String ordering;
+  @override
+  @JsonKey()
+  final String key;
 
   @override
   String toString() {
-    return 'GameParams(page: $page)';
+    return 'GameParams(page: $page, page_size: $page_size, platforms: $platforms, dates: $dates, ordering: $ordering, key: $key)';
   }
 
   @override
@@ -116,12 +204,21 @@ class _$GameParamsImpl implements _GameParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GameParamsImpl &&
-            (identical(other.page, page) || other.page == page));
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.page_size, page_size) ||
+                other.page_size == page_size) &&
+            (identical(other.platforms, platforms) ||
+                other.platforms == platforms) &&
+            (identical(other.dates, dates) || other.dates == dates) &&
+            (identical(other.ordering, ordering) ||
+                other.ordering == ordering) &&
+            (identical(other.key, key) || other.key == key));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, page);
+  int get hashCode => Object.hash(
+      runtimeType, page, page_size, platforms, dates, ordering, key);
 
   @JsonKey(ignore: true)
   @override
@@ -138,13 +235,29 @@ class _$GameParamsImpl implements _GameParams {
 }
 
 abstract class _GameParams implements GameParams {
-  const factory _GameParams({final int page}) = _$GameParamsImpl;
+  const factory _GameParams(
+      {final int page,
+      final int page_size,
+      final int platforms,
+      final String dates,
+      final String ordering,
+      final String key}) = _$GameParamsImpl;
 
   factory _GameParams.fromJson(Map<String, dynamic> json) =
       _$GameParamsImpl.fromJson;
 
   @override
   int get page;
+  @override
+  int get page_size;
+  @override
+  int get platforms;
+  @override
+  String get dates;
+  @override
+  String get ordering;
+  @override
+  String get key;
   @override
   @JsonKey(ignore: true)
   _$$GameParamsImplCopyWith<_$GameParamsImpl> get copyWith =>

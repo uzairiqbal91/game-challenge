@@ -16,10 +16,10 @@ String gamesResponseToJson(GamesResponse data) => json.encode(data.toJson());
 class GamesResponse with _$GamesResponse {
   const factory GamesResponse({
     required int count,
-    required String next,
-    required dynamic previous,
+    required String? next,
+    required String? previous,
     required List<Game> results,
-    required bool user_platforms,
+    required bool? user_platforms,
   }) = _GamesResponse;
 
   factory GamesResponse.fromJson(Map<String, dynamic> json) => _$GamesResponseFromJson(json);
@@ -29,11 +29,11 @@ class GamesResponse with _$GamesResponse {
 class Game with _$Game {
   const factory Game({
 
-    required String name,
-    required DateTime released,
+    required String? name,
+    required DateTime? released,
 
-    required String background_image,
-    required dynamic metacritic,
+    required String? background_image,
+    required int? metacritic,
 
   }) = _Game;
 

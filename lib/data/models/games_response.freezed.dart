@@ -21,10 +21,10 @@ GamesResponse _$GamesResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GamesResponse {
   int get count => throw _privateConstructorUsedError;
-  String get next => throw _privateConstructorUsedError;
-  dynamic get previous => throw _privateConstructorUsedError;
+  String? get next => throw _privateConstructorUsedError;
+  String? get previous => throw _privateConstructorUsedError;
   List<Game> get results => throw _privateConstructorUsedError;
-  bool get user_platforms => throw _privateConstructorUsedError;
+  bool? get user_platforms => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,10 +40,10 @@ abstract class $GamesResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {int count,
-      String next,
-      dynamic previous,
+      String? next,
+      String? previous,
       List<Game> results,
-      bool user_platforms});
+      bool? user_platforms});
 }
 
 /// @nodoc
@@ -60,32 +60,32 @@ class _$GamesResponseCopyWithImpl<$Res, $Val extends GamesResponse>
   @override
   $Res call({
     Object? count = null,
-    Object? next = null,
+    Object? next = freezed,
     Object? previous = freezed,
     Object? results = null,
-    Object? user_platforms = null,
+    Object? user_platforms = freezed,
   }) {
     return _then(_value.copyWith(
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
-      next: null == next
+      next: freezed == next
           ? _value.next
           : next // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       previous: freezed == previous
           ? _value.previous
           : previous // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       results: null == results
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
               as List<Game>,
-      user_platforms: null == user_platforms
+      user_platforms: freezed == user_platforms
           ? _value.user_platforms
           : user_platforms // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ) as $Val);
   }
 }
@@ -100,10 +100,10 @@ abstract class _$$GamesResponseImplCopyWith<$Res>
   @useResult
   $Res call(
       {int count,
-      String next,
-      dynamic previous,
+      String? next,
+      String? previous,
       List<Game> results,
-      bool user_platforms});
+      bool? user_platforms});
 }
 
 /// @nodoc
@@ -118,32 +118,32 @@ class __$$GamesResponseImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? count = null,
-    Object? next = null,
+    Object? next = freezed,
     Object? previous = freezed,
     Object? results = null,
-    Object? user_platforms = null,
+    Object? user_platforms = freezed,
   }) {
     return _then(_$GamesResponseImpl(
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
-      next: null == next
+      next: freezed == next
           ? _value.next
           : next // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       previous: freezed == previous
           ? _value.previous
           : previous // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       results: null == results
           ? _value._results
           : results // ignore: cast_nullable_to_non_nullable
               as List<Game>,
-      user_platforms: null == user_platforms
+      user_platforms: freezed == user_platforms
           ? _value.user_platforms
           : user_platforms // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 }
@@ -165,9 +165,9 @@ class _$GamesResponseImpl implements _GamesResponse {
   @override
   final int count;
   @override
-  final String next;
+  final String? next;
   @override
-  final dynamic previous;
+  final String? previous;
   final List<Game> _results;
   @override
   List<Game> get results {
@@ -177,7 +177,7 @@ class _$GamesResponseImpl implements _GamesResponse {
   }
 
   @override
-  final bool user_platforms;
+  final bool? user_platforms;
 
   @override
   String toString() {
@@ -191,7 +191,8 @@ class _$GamesResponseImpl implements _GamesResponse {
             other is _$GamesResponseImpl &&
             (identical(other.count, count) || other.count == count) &&
             (identical(other.next, next) || other.next == next) &&
-            const DeepCollectionEquality().equals(other.previous, previous) &&
+            (identical(other.previous, previous) ||
+                other.previous == previous) &&
             const DeepCollectionEquality().equals(other._results, _results) &&
             (identical(other.user_platforms, user_platforms) ||
                 other.user_platforms == user_platforms));
@@ -199,13 +200,8 @@ class _$GamesResponseImpl implements _GamesResponse {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      count,
-      next,
-      const DeepCollectionEquality().hash(previous),
-      const DeepCollectionEquality().hash(_results),
-      user_platforms);
+  int get hashCode => Object.hash(runtimeType, count, next, previous,
+      const DeepCollectionEquality().hash(_results), user_platforms);
 
   @JsonKey(ignore: true)
   @override
@@ -224,10 +220,10 @@ class _$GamesResponseImpl implements _GamesResponse {
 abstract class _GamesResponse implements GamesResponse {
   const factory _GamesResponse(
       {required final int count,
-      required final String next,
-      required final dynamic previous,
+      required final String? next,
+      required final String? previous,
       required final List<Game> results,
-      required final bool user_platforms}) = _$GamesResponseImpl;
+      required final bool? user_platforms}) = _$GamesResponseImpl;
 
   factory _GamesResponse.fromJson(Map<String, dynamic> json) =
       _$GamesResponseImpl.fromJson;
@@ -235,13 +231,13 @@ abstract class _GamesResponse implements GamesResponse {
   @override
   int get count;
   @override
-  String get next;
+  String? get next;
   @override
-  dynamic get previous;
+  String? get previous;
   @override
   List<Game> get results;
   @override
-  bool get user_platforms;
+  bool? get user_platforms;
   @override
   @JsonKey(ignore: true)
   _$$GamesResponseImplCopyWith<_$GamesResponseImpl> get copyWith =>
@@ -254,10 +250,10 @@ Game _$GameFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Game {
-  String get name => throw _privateConstructorUsedError;
-  DateTime get released => throw _privateConstructorUsedError;
-  String get background_image => throw _privateConstructorUsedError;
-  dynamic get metacritic => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  DateTime? get released => throw _privateConstructorUsedError;
+  String? get background_image => throw _privateConstructorUsedError;
+  int? get metacritic => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -270,10 +266,10 @@ abstract class $GameCopyWith<$Res> {
       _$GameCopyWithImpl<$Res, Game>;
   @useResult
   $Res call(
-      {String name,
-      DateTime released,
-      String background_image,
-      dynamic metacritic});
+      {String? name,
+      DateTime? released,
+      String? background_image,
+      int? metacritic});
 }
 
 /// @nodoc
@@ -289,28 +285,28 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? released = null,
-    Object? background_image = null,
+    Object? name = freezed,
+    Object? released = freezed,
+    Object? background_image = freezed,
     Object? metacritic = freezed,
   }) {
     return _then(_value.copyWith(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      released: null == released
+              as String?,
+      released: freezed == released
           ? _value.released
           : released // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      background_image: null == background_image
+              as DateTime?,
+      background_image: freezed == background_image
           ? _value.background_image
           : background_image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       metacritic: freezed == metacritic
           ? _value.metacritic
           : metacritic // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as int?,
     ) as $Val);
   }
 }
@@ -323,10 +319,10 @@ abstract class _$$GameImplCopyWith<$Res> implements $GameCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String name,
-      DateTime released,
-      String background_image,
-      dynamic metacritic});
+      {String? name,
+      DateTime? released,
+      String? background_image,
+      int? metacritic});
 }
 
 /// @nodoc
@@ -339,28 +335,28 @@ class __$$GameImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? released = null,
-    Object? background_image = null,
+    Object? name = freezed,
+    Object? released = freezed,
+    Object? background_image = freezed,
     Object? metacritic = freezed,
   }) {
     return _then(_$GameImpl(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      released: null == released
+              as String?,
+      released: freezed == released
           ? _value.released
           : released // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      background_image: null == background_image
+              as DateTime?,
+      background_image: freezed == background_image
           ? _value.background_image
           : background_image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       metacritic: freezed == metacritic
           ? _value.metacritic
           : metacritic // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as int?,
     ));
   }
 }
@@ -378,13 +374,13 @@ class _$GameImpl implements _Game {
       _$$GameImplFromJson(json);
 
   @override
-  final String name;
+  final String? name;
   @override
-  final DateTime released;
+  final DateTime? released;
   @override
-  final String background_image;
+  final String? background_image;
   @override
-  final dynamic metacritic;
+  final int? metacritic;
 
   @override
   String toString() {
@@ -401,14 +397,14 @@ class _$GameImpl implements _Game {
                 other.released == released) &&
             (identical(other.background_image, background_image) ||
                 other.background_image == background_image) &&
-            const DeepCollectionEquality()
-                .equals(other.metacritic, metacritic));
+            (identical(other.metacritic, metacritic) ||
+                other.metacritic == metacritic));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, released, background_image,
-      const DeepCollectionEquality().hash(metacritic));
+  int get hashCode =>
+      Object.hash(runtimeType, name, released, background_image, metacritic);
 
   @JsonKey(ignore: true)
   @override
@@ -426,21 +422,21 @@ class _$GameImpl implements _Game {
 
 abstract class _Game implements Game {
   const factory _Game(
-      {required final String name,
-      required final DateTime released,
-      required final String background_image,
-      required final dynamic metacritic}) = _$GameImpl;
+      {required final String? name,
+      required final DateTime? released,
+      required final String? background_image,
+      required final int? metacritic}) = _$GameImpl;
 
   factory _Game.fromJson(Map<String, dynamic> json) = _$GameImpl.fromJson;
 
   @override
-  String get name;
+  String? get name;
   @override
-  DateTime get released;
+  DateTime? get released;
   @override
-  String get background_image;
+  String? get background_image;
   @override
-  dynamic get metacritic;
+  int? get metacritic;
   @override
   @JsonKey(ignore: true)
   _$$GameImplCopyWith<_$GameImpl> get copyWith =>

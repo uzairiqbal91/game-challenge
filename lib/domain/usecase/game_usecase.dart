@@ -23,7 +23,15 @@ class GameUseCase extends UseCase<GamesResponse, GameParams> {
 
 @freezed
 class GameParams with _$GameParams {
-  const factory GameParams({@Default(1) int page}) = _GameParams;
+  const factory GameParams({
+    @Default(1) int page,
+    @Default(20) int page_size,
+    @Default(187) int platforms,
+    @Default('2022-12-06,2023-12-06') String dates,
+    @Default('-released') String ordering,
+    @Default('02ef6ba5d13444ee86bad607e8bce3f4') String key,
+
+  }) = _GameParams;
 
   factory GameParams.fromJson(Map<String, dynamic> json) =>
       _$GameParamsFromJson(json);
