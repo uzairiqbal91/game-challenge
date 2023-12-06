@@ -10,13 +10,13 @@ import 'empty_widget_placeholder_widget.dart';
 import 'game_tile_description_widget.dart';
 
 
-class RecipeItemWidget extends StatelessWidget {
+class GameItemWidget extends StatelessWidget {
   final String image;
   final String name;
   final String releaseDate;
   final String score;
 
-  const RecipeItemWidget(
+  const GameItemWidget(
       {Key? key, required this.image, required this.name, required this.releaseDate,required this.score})
       : super(key: key);
 
@@ -37,13 +37,21 @@ class RecipeItemWidget extends StatelessWidget {
             SizedBox(
               height: 130,
               child: Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(AppSizes.CARD_PADDING),
                 child: Row(
                   children: [
-                    BorderdImageWidget(image: image),
                     Expanded(
-                      child: ScoreCardWidget(name: name, releaseDate: releaseDate, score: score),
+                        flex: 3,
+                        child: BorderdImageWidget(image: image)),
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 2)),
+                    Expanded(
+                      flex: 6,
+                      child: GameTileDescriptionWidget(name: name, releaseDate: releaseDate),
                     ),
+                    Expanded(
+                        flex: 2,
+                        child: ScoreCardWidget(score: score,)),
+
                   ],
                 ),
               ),

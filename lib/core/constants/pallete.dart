@@ -11,5 +11,6 @@ class Palette {
   static const Color titleColor = Colors.black;
   static const Color buttonTextColor = Colors.white;
   static const Color buttonColor = Colors.purple;
+  static const Color skeleton = Color(0xffE2E2E2);
 
 }

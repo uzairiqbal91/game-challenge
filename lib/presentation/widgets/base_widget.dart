@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gamechallange/core/constants/app_constatns.dart';
 
 class BaseWidget extends StatefulWidget {
   final Widget? child;
@@ -28,14 +29,19 @@ class _BaseWidgetState extends State<BaseWidget> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-      child: Scaffold(
-        key: widget.scaffoldKey,
-        backgroundColor: widget.backgroundColor,
-        resizeToAvoidBottomInset: widget.avoidBottomInset,
-        extendBodyBehindAppBar: widget.extendBodyBehindAppBar,
-        appBar: widget.appBar,
-        body: widget.child,
+      child: SafeArea(
+        child: Scaffold(
+          key: widget.scaffoldKey,
+          backgroundColor: widget.backgroundColor,
+          resizeToAvoidBottomInset: widget.avoidBottomInset,
+          extendBodyBehindAppBar: widget.extendBodyBehindAppBar,
+          appBar: widget.appBar,
+          body: Padding(
+            padding: const EdgeInsets.all(AppSizes.HORIZONTAL_PADDING),
+            child: widget.child,
+          ),
 
+        ),
       ),
     );
   }

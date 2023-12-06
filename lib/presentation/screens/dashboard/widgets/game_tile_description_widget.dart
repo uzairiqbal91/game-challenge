@@ -13,6 +13,7 @@ class GameTileDescriptionWidget extends StatelessWidget {
   final String name;
   final String releaseDate;
 
+
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -6,6 +6,7 @@ import 'package:gamechallange/data/models/games_response.dart';
 import 'package:gamechallange/domain/usecase/game_usecase.dart';
 import 'package:gamechallange/presentation/screens/dashboard/game_cubit/game_cubit.dart';
 import 'package:gamechallange/presentation/screens/dashboard/widgets/game_item_widget.dart';
+import 'package:gamechallange/presentation/screens/dashboard/widgets/game_items_skeleton_widget.dart';
 import 'package:gamechallange/presentation/widgets/base_widget.dart';
 
 import '../../../core/constants/app_constatns.dart';
@@ -64,7 +65,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
         child: BlocBuilder<GameCubit, GameState>(
           builder: (_, state) {
             return state.when(
-              loading: () => const Center(child: Loading()),
+              loading: () =>  Center(
+                  child: ListView.builder(
+
+                    itemCount: 6,
+                    itemBuilder: (_, index) {
+                      return GameItemSkeletonWidget();
+
+                    },
+                  )
+
+              ),
               success: (data) {
                 _games.addAll(data.results ?? []);
                 _isLastPage = data.next == null ? true : false;
@@ -72,15 +83,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 return ListView.builder(
                   controller: _scrollController,
                   itemCount: _isLastPage ? _games.length : _games.length + 1,
-                  padding: const EdgeInsets.symmetric(
-                      vertical: AppSizes.SCREEN_PADDING_BETWEE_TILES),
                   itemBuilder: (_, index) {
                     return index < _games.length
-                        ? RecipeItemWidget(image: _games[index].background_image ?? "", name: _games[index].name ?? "", releaseDate: _games[index].released.toString() ?? "", score: _games[index].metacritic.toString() ?? "",)
+                        ? GameItemWidget(
+                            image: _games[index].background_image ?? "",
+                            name: _games[index].name ?? "",
+                            releaseDate:
+                                _games[index].released.toString() ?? "",
+                            score: _games[index].metacritic.toString() ?? "",
+                          )
                         : const Padding(
                             padding: EdgeInsets.all(16),
                             child: Center(
-                              child: CircularProgressIndicator(color: Palette.primary,),
+                              child: CircularProgressIndicator(
+                                color: Palette.primary,
+                              ),
                             ),
                           );
                   },
