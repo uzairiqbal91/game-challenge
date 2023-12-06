@@ -12,7 +12,7 @@ _$GamesResponseImpl _$$GamesResponseImplFromJson(Map<String, dynamic> json) =>
       next: json['next'] as String,
       previous: json['previous'],
       results: (json['results'] as List<dynamic>)
-          .map((e) => Result.fromJson(e as Map<String, dynamic>))
+          .map((e) => Game.fromJson(e as Map<String, dynamic>))
           .toList(),
       user_platforms: json['user_platforms'] as bool,
     );
@@ -26,14 +26,14 @@ Map<String, dynamic> _$$GamesResponseImplToJson(_$GamesResponseImpl instance) =>
       'user_platforms': instance.user_platforms,
     };
 
-_$ResultImpl _$$ResultImplFromJson(Map<String, dynamic> json) => _$ResultImpl(
+_$GameImpl _$$GameImplFromJson(Map<String, dynamic> json) => _$GameImpl(
       name: json['name'] as String,
       released: DateTime.parse(json['released'] as String),
       background_image: json['background_image'] as String,
       metacritic: json['metacritic'],
     );
 
-Map<String, dynamic> _$$ResultImplToJson(_$ResultImpl instance) =>
+Map<String, dynamic> _$$GameImplToJson(_$GameImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'released': instance.released.toIso8601String(),

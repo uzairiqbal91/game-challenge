@@ -1,0 +1,7 @@
+{
+  "count": 239,
+  "next": "https://api.rawg.io/api/games?dates=2020-12-21%2C2021-12-21&key=02ef6ba5d13444ee86bad607e8bce3f4&ordering=-released&page=2&page_size=2&platforms=187",
+  "previous": null,
+  "results": [],
+  "user_platforms": false
+}

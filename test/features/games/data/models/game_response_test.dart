@@ -8,7 +8,7 @@ import '../../../../helpers/paths.dart';
 
 void main() {
   final listGames = [
-    Result.fromJson({
+    Game.fromJson({
       "slug": "five-nights-at-freddys-security-breach",
       "name": "Five Nights at Freddy's: Security Breach",
       "playtime": 9,
@@ -484,7 +484,7 @@ void main() {
         {"id": 4, "name": "Action", "slug": "action"}
       ]
     }),
-    Result.fromJson({
+    Game.fromJson({
       "slug": "alfred-hitchcock-vertigo",
       "name": "Alfred Hitchcock – Vertigo",
       "playtime": 2,
@@ -978,8 +978,8 @@ void main() {
             "https://media.rawg.io/media/games/074/074e642bdfa4a6b774977a2222dfd4ea.jpg",
         "metacritic": null,
       }
-    ]).map((e) => Result.fromJson(e as Map<String, dynamic>)).toList();
-    final resultJson = Result.fromJson(
+    ]).map((e) => Game.fromJson(e as Map<String, dynamic>)).toList();
+    final resultJson = Game.fromJson(
       {
         "name": "Five Nights at Freddy's: Security Breach",
         "released": "2021-12-16 00:00:00.000",

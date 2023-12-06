@@ -18,7 +18,7 @@ class GamesResponse with _$GamesResponse {
     required int count,
     required String next,
     required dynamic previous,
-    required List<Result> results,
+    required List<Game> results,
     required bool user_platforms,
   }) = _GamesResponse;
 
@@ -26,8 +26,8 @@ class GamesResponse with _$GamesResponse {
 }
 
 @freezed
-class Result with _$Result {
-  const factory Result({
+class Game with _$Game {
+  const factory Game({
 
     required String name,
     required DateTime released,
@@ -35,8 +35,8 @@ class Result with _$Result {
     required String background_image,
     required dynamic metacritic,
 
-  }) = _Result;
+  }) = _Game;
 
-  factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
+  factory Game.fromJson(Map<String, dynamic> json) => _$GameFromJson(json);
 }
 
