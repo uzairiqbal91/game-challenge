@@ -18,7 +18,7 @@ class EmptyImagePlaceholderwidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(18),
 
       ),
-      child: Center(
+      child: const Center(
         child: Icon(Icons.videogame_asset_rounded,color: Palette.bacgrkound,size: 40,),
       ),
     );
