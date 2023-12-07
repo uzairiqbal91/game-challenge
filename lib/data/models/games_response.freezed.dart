@@ -252,6 +252,7 @@ Game _$GameFromJson(Map<String, dynamic> json) {
 mixin _$Game {
   String? get name => throw _privateConstructorUsedError;
   DateTime? get released => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String? get background_image => throw _privateConstructorUsedError;
   int? get metacritic => throw _privateConstructorUsedError;
 
@@ -268,6 +269,7 @@ abstract class $GameCopyWith<$Res> {
   $Res call(
       {String? name,
       DateTime? released,
+      int? id,
       String? background_image,
       int? metacritic});
 }
@@ -287,6 +289,7 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
   $Res call({
     Object? name = freezed,
     Object? released = freezed,
+    Object? id = freezed,
     Object? background_image = freezed,
     Object? metacritic = freezed,
   }) {
@@ -299,6 +302,10 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
           ? _value.released
           : released // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       background_image: freezed == background_image
           ? _value.background_image
           : background_image // ignore: cast_nullable_to_non_nullable
@@ -321,6 +328,7 @@ abstract class _$$GameImplCopyWith<$Res> implements $GameCopyWith<$Res> {
   $Res call(
       {String? name,
       DateTime? released,
+      int? id,
       String? background_image,
       int? metacritic});
 }
@@ -337,6 +345,7 @@ class __$$GameImplCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? released = freezed,
+    Object? id = freezed,
     Object? background_image = freezed,
     Object? metacritic = freezed,
   }) {
@@ -349,6 +358,10 @@ class __$$GameImplCopyWithImpl<$Res>
           ? _value.released
           : released // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       background_image: freezed == background_image
           ? _value.background_image
           : background_image // ignore: cast_nullable_to_non_nullable
@@ -367,6 +380,7 @@ class _$GameImpl implements _Game {
   const _$GameImpl(
       {required this.name,
       required this.released,
+      required this.id,
       required this.background_image,
       required this.metacritic});
 
@@ -378,13 +392,15 @@ class _$GameImpl implements _Game {
   @override
   final DateTime? released;
   @override
+  final int? id;
+  @override
   final String? background_image;
   @override
   final int? metacritic;
 
   @override
   String toString() {
-    return 'Game(name: $name, released: $released, background_image: $background_image, metacritic: $metacritic)';
+    return 'Game(name: $name, released: $released, id: $id, background_image: $background_image, metacritic: $metacritic)';
   }
 
   @override
@@ -395,6 +411,7 @@ class _$GameImpl implements _Game {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.released, released) ||
                 other.released == released) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.background_image, background_image) ||
                 other.background_image == background_image) &&
             (identical(other.metacritic, metacritic) ||
@@ -403,8 +420,8 @@ class _$GameImpl implements _Game {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, name, released, background_image, metacritic);
+  int get hashCode => Object.hash(
+      runtimeType, name, released, id, background_image, metacritic);
 
   @JsonKey(ignore: true)
   @override
@@ -424,6 +441,7 @@ abstract class _Game implements Game {
   const factory _Game(
       {required final String? name,
       required final DateTime? released,
+      required final int? id,
       required final String? background_image,
       required final int? metacritic}) = _$GameImpl;
 
@@ -433,6 +451,8 @@ abstract class _Game implements Game {
   String? get name;
   @override
   DateTime? get released;
+  @override
+  int? get id;
   @override
   String? get background_image;
   @override

@@ -8,12 +8,12 @@ part of 'game_usecase.dart';
 
 _$GameParamsImpl _$$GameParamsImplFromJson(Map<String, dynamic> json) =>
     _$GameParamsImpl(
-      page: json['page'] as int? ?? 1,
-      page_size: json['page_size'] as int? ?? 20,
-      platforms: json['platforms'] as int? ?? 187,
-      dates: json['dates'] as String? ?? '2022-12-06,2023-12-06',
-      ordering: json['ordering'] as String? ?? '-released',
-      key: json['key'] as String? ?? '02ef6ba5d13444ee86bad607e8bce3f4',
+      page: json['page'] as int? ?? ApiStrings.defaultPage,
+      page_size: json['page_size'] as int? ?? ApiStrings.defaultPageSize,
+      platforms: json['platforms'] as int? ?? ApiStrings.defaultPlatform,
+      dates: json['dates'] as String? ?? ApiStrings.defaultDates,
+      ordering: json['ordering'] as String? ?? ApiStrings.defaultOrdering,
+      key: json['key'] as String? ?? '686b03ffc0154abb837a21404851f3a7',
     );
 
 Map<String, dynamic> _$$GameParamsImplToJson(_$GameParamsImpl instance) =>

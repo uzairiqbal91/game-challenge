@@ -165,12 +165,12 @@ class __$$GameParamsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$GameParamsImpl implements _GameParams {
   const _$GameParamsImpl(
-      {this.page = 1,
-      this.page_size = 20,
-      this.platforms = 187,
-      this.dates = '2022-12-06,2023-12-06',
-      this.ordering = '-released',
-      this.key = '02ef6ba5d13444ee86bad607e8bce3f4'});
+      {this.page = ApiStrings.defaultPage,
+      this.page_size = ApiStrings.defaultPageSize,
+      this.platforms = ApiStrings.defaultPlatform,
+      this.dates = ApiStrings.defaultDates,
+      this.ordering = ApiStrings.defaultOrdering,
+      this.key = '686b03ffc0154abb837a21404851f3a7'});
 
   factory _$GameParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GameParamsImplFromJson(json);

@@ -44,6 +44,15 @@ class DioClient  {
   Dio _createDio() => Dio(
         BaseOptions(
           baseUrl: baseUrl,
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          receiveTimeout: const Duration(minutes: 1),
+          connectTimeout: const Duration(minutes: 1),
+          validateStatus: (int? status) {
+            return status! > 0;
+          },
 
         ),
       );

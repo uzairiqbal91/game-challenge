@@ -31,6 +31,7 @@ class Game with _$Game {
 
     required String? name,
     required DateTime? released,
+    required int? id,
 
     required String? background_image,
     required int? metacritic,

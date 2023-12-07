@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:gamechallange/core/constants/app_constatns.dart';
 import 'package:gamechallange/data/models/games_response.dart';
 import 'package:gamechallange/domain/repository/game_repository.dart';
 
@@ -19,17 +20,15 @@ class GameUseCase extends UseCase<GamesResponse, GameParams> {
       _repo.gameResponse(params);
 }
 
-
-
 @freezed
 class GameParams with _$GameParams {
   const factory GameParams({
-    @Default(1) int page,
-    @Default(20) int page_size,
-    @Default(187) int platforms,
-    @Default('2022-12-06,2023-12-06') String dates,
-    @Default('-released') String ordering,
-    @Default('02ef6ba5d13444ee86bad607e8bce3f4') String key,
+    @Default(ApiStrings.defaultPage) int page,
+    @Default(ApiStrings.defaultPageSize) int page_size,
+    @Default(ApiStrings.defaultPlatform) int platforms,
+    @Default(ApiStrings.defaultDates) String dates,
+    @Default(ApiStrings.defaultOrdering) String ordering,
+    @Default('686b03ffc0154abb837a21404851f3a7') String key,
 
   }) = _GameParams;
 

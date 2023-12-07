@@ -31,6 +31,7 @@ _$GameImpl _$$GameImplFromJson(Map<String, dynamic> json) => _$GameImpl(
       released: json['released'] == null
           ? null
           : DateTime.parse(json['released'] as String),
+      id: json['id'] as int?,
       background_image: json['background_image'] as String?,
       metacritic: json['metacritic'] as int?,
     );
@@ -39,6 +40,7 @@ Map<String, dynamic> _$$GameImplToJson(_$GameImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'released': instance.released?.toIso8601String(),
+      'id': instance.id,
       'background_image': instance.background_image,
       'metacritic': instance.metacritic,
     };
