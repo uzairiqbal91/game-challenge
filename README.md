@@ -27,3 +27,9 @@ This Flutter app is a game challenge that leverages the power of Flutter for cre
     - [x] BLoC test
 - [x] Pagination
 
+## All Test Passinng ✅
+<img width="472" alt="Screenshot 2023-12-07 at 6 04 14 PM" src="https://github.com/uzairiqbal91/game-challenge/assets/25804523/65f4b388-07de-47d3-b9d9-1074e494b22d">
+
+https://github.com/uzairiqbal91/game-challenge/assets/25804523/f0f929ed-c34a-46fc-bb6b-c98e6f34aa47
+
+
