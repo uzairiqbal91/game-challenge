@@ -22,8 +22,12 @@
 
 
 
-
+## Android
 https://github.com/uzairiqbal91/game-challenge/assets/25804523/b218748f-5eea-40aa-a851-b7dea3f4f397
+
+
+## iOS
+https://github.com/uzairiqbal91/game-challenge/assets/25804523/3dc6f214-11f7-445c-ad09-2bd2d63e6056
 
 
 
