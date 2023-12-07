@@ -1,5 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gamechallange/data/models/games_response.dart';
@@ -8,10 +6,8 @@ import 'package:gamechallange/presentation/screens/dashboard/widgets/game_item_w
 import 'package:gamechallange/presentation/screens/dashboard/widgets/game_items_skeleton_widget.dart';
 import 'package:gamechallange/presentation/widgets/base_widget.dart';
 
-import '../../../core/constants/app_constatns.dart';
 import '../../../core/constants/pallete.dart';
 import '../../widgets/empty.dart';
-import '../../widgets/laoding.dart';
 import 'cubit/game_cubit.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -71,11 +67,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     physics: const AlwaysScrollableScrollPhysics(),
                 itemCount: 6,
                 itemBuilder: (_, index) {
-                  return GameItemSkeletonWidget();
+                  return const GameItemSkeletonWidget();
                 },
               )),
               success: (data) {
-                _games.addAll(data.results ?? []);
+                _games.addAll(data.results);
                 _isLastPage = data.next == null ? true : false;
 
                 return ListView.builder(
@@ -88,8 +84,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             image: _games[index].background_image ?? "",
                             name: _games[index].name ?? "",
                             releaseDate:
-                                _games[index].released.toString() ?? "",
-                            score: _games[index].metacritic.toString() ?? "",
+                                _games[index].released.toString(),
+                            score: _games[index].metacritic.toString(),
                           )
                         : const Padding(
                             padding: EdgeInsets.all(16),

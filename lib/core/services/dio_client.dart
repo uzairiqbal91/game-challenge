@@ -65,7 +65,7 @@ class DioClient  {
       }
       return Right(converter(response.data));
 
-    } on DioException catch (e, stackTrace) {
+    } on DioException catch (e) {
 
       return Left(
         ServerFailure(

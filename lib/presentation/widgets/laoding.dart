@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gamechallange/core/constants/app_constatns.dart';
 
 import '../../core/constants/pallete.dart';
 
 class Loading extends StatelessWidget {
-  const Loading({this.showMessage = true});
+  const Loading({super.key, this.showMessage = true});
 
   final bool showMessage;
 
@@ -15,11 +14,11 @@ class Loading extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CircularProgressIndicator(color: Palette.primary,),
+          const CircularProgressIndicator(color: Palette.primary,),
           Visibility(
             visible: showMessage,
             child: Text(
-              AppStrings.PLEASE_WAIT,
+              AppStrings.pleaseWait,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),

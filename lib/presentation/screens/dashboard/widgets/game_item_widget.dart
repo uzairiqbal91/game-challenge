@@ -1,12 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:gamechallange/core/constants/pallete.dart';
 import 'package:gamechallange/presentation/screens/dashboard/widgets/score_card_widget.dart';
 
 import '../../../../core/constants/app_constatns.dart';
 import 'borderd_image_widget.dart';
-import 'empty_widget_placeholder_widget.dart';
 import 'game_tile_description_widget.dart';
 
 
@@ -27,7 +23,7 @@ class GameItemWidget extends StatelessWidget {
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius:
-              BorderRadius.circular(AppSizes.CIRCULAR_RADIUS_SIZE),
+              BorderRadius.circular(AppSizes.circularRadiusSize),
           //set border radius more than 50% of height and width to make circle
         ),
         elevation: 5.0,
@@ -37,13 +33,13 @@ class GameItemWidget extends StatelessWidget {
             SizedBox(
               height: 130,
               child: Padding(
-                padding: const EdgeInsets.all(AppSizes.CARD_PADDING),
+                padding: const EdgeInsets.all(AppSizes.cardPadding),
                 child: Row(
                   children: [
                     Expanded(
                         flex: 3,
                         child: BorderdImageWidget(image: image)),
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 2)),
+                    const Padding(padding: EdgeInsets.symmetric(horizontal: 2)),
                     Expanded(
                       flex: 6,
                       child: GameTileDescriptionWidget(name: name, releaseDate: releaseDate),

@@ -10,7 +10,6 @@ import 'package:gamechallange/data/models/games_response.dart';
 import 'package:gamechallange/data/repository/game_repository_impl.dart';
 import 'package:gamechallange/domain/usecase/game_usecase.dart';
 import 'package:mockito/mockito.dart';
-import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
 
 import '../../../helpers/json_reader.dart';
 import '../../../helpers/paths.dart';

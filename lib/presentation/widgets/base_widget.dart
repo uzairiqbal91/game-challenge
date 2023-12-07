@@ -37,7 +37,7 @@ class _BaseWidgetState extends State<BaseWidget> {
           extendBodyBehindAppBar: widget.extendBodyBehindAppBar,
           appBar: widget.appBar,
           body: Padding(
-            padding: const EdgeInsets.all(AppSizes.HORIZONTAL_PADDING),
+            padding: const EdgeInsets.all(AppSizes.horizontalPadding),
             child: widget.child,
           ),
 

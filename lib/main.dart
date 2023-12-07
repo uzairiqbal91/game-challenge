@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => sl<GameCubit>()..fetchGames(const GameParams())),
       ],
       child: MaterialApp(
-        title: AppStrings.APP_NAME,
+        title: AppStrings.appName,
         debugShowCheckedModeBanner: false,
         // onGenerateRoute: getAppRoutes().getRoutes,
 
@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           // textScaleFactor to prevent font size change in application
           return MediaQuery(
-            child: child!,
             data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            child: child!,
           );
         },
       ),

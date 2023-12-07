@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:bloc_test/bloc_test.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -12,11 +11,8 @@ import 'package:gamechallange/data/models/games_response.dart';
 import 'package:gamechallange/domain/usecase/game_usecase.dart';
 import 'package:gamechallange/presentation/screens/dashboard/cubit/game_cubit.dart';
 import 'package:gamechallange/presentation/screens/dashboard/dashboard_screen.dart';
-import 'package:gamechallange/presentation/screens/dashboard/widgets/game_item_widget.dart';
 import 'package:gamechallange/presentation/screens/dashboard/widgets/game_items_skeleton_widget.dart';
-import 'package:gamechallange/presentation/widgets/base_widget.dart';
 import 'package:gamechallange/presentation/widgets/empty.dart';
-import 'package:gamechallange/presentation/widgets/laoding.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../helpers/json_reader.dart';
@@ -50,7 +46,7 @@ void main() {
     return BlocProvider<GameCubit>.value(
       value: gameCubit,
       child: MaterialApp(
-        title: AppStrings.APP_NAME,
+        title: AppStrings.appName,
         debugShowCheckedModeBanner: false,
         home: body,
 
@@ -98,7 +94,7 @@ void main() {
 
       await tester.pumpWidget(rootWidget(const DashboardScreen()));
 
-      for (int i = 0; i < 5; i++) { await tester.pump(Duration(seconds: 1)); }
+      for (int i = 0; i < 5; i++) { await tester.pump(const Duration(seconds: 1)); }
 
       expect(find.byType(ListView), findsOneWidget);
 
@@ -114,17 +110,17 @@ void main() {
       when(() => gameCubit.refreshGames(any())).thenAnswer((_) async {});
 
       await tester.pumpWidget(rootWidget(const DashboardScreen()));
-      for (int i = 0; i < 5; i++) { await tester.pump(Duration(seconds: 1)); }
+      for (int i = 0; i < 5; i++) { await tester.pump(const Duration(seconds: 1)); }
       await tester.fling(
         find.text('Alfred Hitchcock – Vertigo'),
         const Offset(0.0, 300.0),
         1000.0,
       );
       // // Wait for the refresh indicator to appear and settle
-      for (int i = 0; i < 10; i++) { await tester.pump(Duration(seconds: 1)); }
+      for (int i = 0; i < 10; i++) { await tester.pump(const Duration(seconds: 1)); }
       //
       // // Verify that the refresh method is called
-      verify(() => gameCubit.refreshGames(GameParams(page: 1))).called(1);
+      verify(() => gameCubit.refreshGames(const GameParams(page: 1))).called(1);
     },
   );
 

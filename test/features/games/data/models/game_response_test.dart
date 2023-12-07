@@ -978,16 +978,8 @@ void main() {
             "https://media.rawg.io/media/games/074/074e642bdfa4a6b774977a2222dfd4ea.jpg",
         "metacritic": null,
       }
-    ]).map((e) => Game.fromJson(e as Map<String, dynamic>)).toList();
-    final resultJson = Game.fromJson(
-      {
-        "name": "Five Nights at Freddy's: Security Breach",
-        "released": "2021-12-16 00:00:00.000",
-        "background_image":
-            "https://media.rawg.io/media/games/f5b/f5b0a8232e747c03aa6b56ce2d2af49a.jpg",
-        "metacritic": 64,
-      },
-    );
+    ]).map((e) => Game.fromJson(e)).toList();
+
 
     /// arrange
     final exceptedJson = {

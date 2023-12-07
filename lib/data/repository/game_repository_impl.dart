@@ -22,7 +22,7 @@ class GameRepositoryImpl implements GameRepository {
     return response.fold(
           (failure) => Left(failure),
           (gameResponse) {
-        if (gameResponse.results.isEmpty ?? true) {
+        if (gameResponse.results.isEmpty) {
           return Left(NoDataFailure());
         }
         return Right(gameResponse);

@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_constatns.dart';
 import '../../../../core/constants/pallete.dart';
 
 class GameItemSkeletonWidget extends StatelessWidget {
+  const GameItemSkeletonWidget({super.key});
+
 
 
   @override
@@ -14,7 +15,7 @@ class GameItemSkeletonWidget extends StatelessWidget {
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius:
-          BorderRadius.circular(AppSizes.CIRCULAR_RADIUS_SIZE),
+          BorderRadius.circular(AppSizes.circularRadiusSize),
           //set border radius more than 50% of height and width to make circle
         ),
         elevation: 5.0,
@@ -24,7 +25,7 @@ class GameItemSkeletonWidget extends StatelessWidget {
             SizedBox(
               height: 130,
               child: Padding(
-                padding: const EdgeInsets.all(AppSizes.CARD_PADDING),
+                padding: const EdgeInsets.all(AppSizes.cardPadding),
                 child: Row(
                   children: [
                     Expanded(
