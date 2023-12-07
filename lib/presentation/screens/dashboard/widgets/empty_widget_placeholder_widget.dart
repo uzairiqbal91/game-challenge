@@ -3,22 +3,25 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/pallete.dart';
 
 class EmptyImagePlaceholderwidget extends StatelessWidget {
-  const EmptyImagePlaceholderwidget({
-    super.key,
-  });
+  double height;
+  double width;
+  EmptyImagePlaceholderwidget({super.key, this.height = 100, this.width = 100});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      width: 100,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
         color: Palette.primary,
         borderRadius: BorderRadius.circular(18),
-
       ),
-      child: const Center(
-        child: Icon(Icons.videogame_asset_rounded,color: Palette.bacgrkound,size: 40,),
+      child: Center(
+        child: Icon(
+          Icons.videogame_asset_rounded,
+          color: Palette.bacgrkound,
+          size: height / 2,
+        ),
       ),
     );
   }

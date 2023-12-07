@@ -28,8 +28,8 @@ class Developer with _$Developer {
     required int? id,
     required String? name,
     required String? slug,
-    required int? gamesCount,
-    required String? imageBackground,
+    required int? games_count,
+    required String? image_background,
   }) = _Developer;
 
   factory Developer.fromJson(Map<String, dynamic> json) => _$DeveloperFromJson(json);

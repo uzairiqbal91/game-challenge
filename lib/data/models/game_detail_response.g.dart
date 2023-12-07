@@ -39,8 +39,8 @@ _$DeveloperImpl _$$DeveloperImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as int?,
       name: json['name'] as String?,
       slug: json['slug'] as String?,
-      gamesCount: json['gamesCount'] as int?,
-      imageBackground: json['imageBackground'] as String?,
+      games_count: json['games_count'] as int?,
+      image_background: json['image_background'] as String?,
     );
 
 Map<String, dynamic> _$$DeveloperImplToJson(_$DeveloperImpl instance) =>
@@ -48,6 +48,6 @@ Map<String, dynamic> _$$DeveloperImplToJson(_$DeveloperImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'slug': instance.slug,
-      'gamesCount': instance.gamesCount,
-      'imageBackground': instance.imageBackground,
+      'games_count': instance.games_count,
+      'image_background': instance.image_background,
     };

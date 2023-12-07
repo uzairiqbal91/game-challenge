@@ -12,8 +12,8 @@ void main() {
     });
 
     test('returns correct values for GameDetailStatus.success', () {
-      const status = GameDetailState.success(GamesDetailResponse(id: 1, name: "", description: "", developers: [Developer(id: 1, name: "", slug: "", gamesCount: 1, imageBackground:  "")],genres: [Developer(id: 1, name: "", slug: "", gamesCount: 1, imageBackground:  "")],publishers: [Developer(id: 1, name: "", slug: "", gamesCount: 1, imageBackground:  "")]));
-      expect(status, const GameDetailState.success(GamesDetailResponse(id: 1, name: "", description: "", developers: [Developer(id: 1, name: "", slug: "", gamesCount: 1, imageBackground:  "")],genres: [Developer(id: 1, name: "", slug: "", gamesCount: 1, imageBackground:  "")],publishers: [Developer(id: 1, name: "", slug: "", gamesCount: 1, imageBackground:  "")])));
+      const status = GameDetailState.success(GamesDetailResponse(id: 1, name: "", description: "", developers: [Developer(id: 1, name: "", slug: "", games_count: 1, image_background:  "")],genres: [Developer(id: 1, name: "", slug: "", games_count: 1, image_background:  "")],publishers: [Developer(id: 1, name: "", slug: "", games_count: 1, image_background:  "")]));
+      expect(status, const GameDetailState.success(GamesDetailResponse(id: 1, name: "", description: "", developers: [Developer(id: 1, name: "", slug: "", games_count: 1, image_background:  "")],genres: [Developer(id: 1, name: "", slug: "", games_count: 1, image_background:  "")],publishers: [Developer(id: 1, name: "", slug: "", games_count: 1, image_background:  "")])));
     });
 
     test('returns correct values for GameDetailStatus.failure', () {

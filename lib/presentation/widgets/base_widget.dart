@@ -9,6 +9,7 @@ class BaseWidget extends StatefulWidget {
   final Color? backgroundColor;
   final Key? scaffoldKey;
   final bool extendBodyBehindAppBar;
+  final bool isPadding;
 
   const BaseWidget({
     super.key,
@@ -18,6 +19,7 @@ class BaseWidget extends StatefulWidget {
     this.backgroundColor,
     this.scaffoldKey,
     this.extendBodyBehindAppBar = false,
+    this.isPadding = true
   });
 
   @override
@@ -37,7 +39,7 @@ class _BaseWidgetState extends State<BaseWidget> {
           extendBodyBehindAppBar: widget.extendBodyBehindAppBar,
           appBar: widget.appBar,
           body: Padding(
-            padding: const EdgeInsets.all(AppSizes.horizontalPadding),
+            padding: widget.isPadding ? const EdgeInsets.all(AppSizes.horizontalPadding) : const EdgeInsets.all(0),
             child: widget.child,
           ),
 

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gamechallange/data/models/games_response.dart';
 import 'package:gamechallange/domain/usecase/dashboard/game_usecase.dart';
-import 'package:gamechallange/domain/usecase/detail/game_detail_usecase.dart';
 import 'package:gamechallange/presentation/screens/dashboard/widgets/game_item_widget.dart';
 import 'package:gamechallange/presentation/screens/dashboard/widgets/game_items_skeleton_widget.dart';
-import 'package:gamechallange/presentation/screens/detail/cubit/game_detail_cubit.dart';
 import 'package:gamechallange/presentation/widgets/base_widget.dart';
 
 import '../../../core/constants/pallete.dart';
@@ -28,6 +26,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   void initState() {
     super.initState();
+
 
 
     _scrollController.addListener(() async {
@@ -84,6 +83,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         ? GameItemWidget(
                             image: _games[index].background_image ?? "",
                             name: _games[index].name ?? "",
+                            id : _games[index].id ?? 0,
                             releaseDate:
                                 _games[index].released.toString(),
                             score: _games[index].metacritic.toString(),

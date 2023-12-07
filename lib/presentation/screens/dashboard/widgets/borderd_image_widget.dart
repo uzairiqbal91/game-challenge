@@ -8,25 +8,29 @@ class BorderdImageWidget extends StatelessWidget {
   const BorderdImageWidget({
     super.key,
     required this.image,
+    this.height = 100,
+    this.width = 100
   });
 
   final String image;
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: image,
       imageBuilder: (context, imageProvider) => Container(
-        height: 100,
-        width: 100,
+        height: this.height,
+        width: this.width,
         decoration: BoxDecoration(
           color: Palette.primary,
           borderRadius: BorderRadius.circular(18),
           image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
         ),
       ),
-      placeholder: (context,url) => const EmptyImagePlaceholderwidget(),
-      errorWidget: (context,url,error) => const EmptyImagePlaceholderwidget(),
+      placeholder: (context,url) =>  EmptyImagePlaceholderwidget(height: height,width: width,),
+      errorWidget: (context,url,error) =>  EmptyImagePlaceholderwidget(height: height,width: width,),
 
     );
   }

@@ -300,8 +300,8 @@ mixin _$Developer {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get slug => throw _privateConstructorUsedError;
-  int? get gamesCount => throw _privateConstructorUsedError;
-  String? get imageBackground => throw _privateConstructorUsedError;
+  int? get games_count => throw _privateConstructorUsedError;
+  String? get image_background => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -318,8 +318,8 @@ abstract class $DeveloperCopyWith<$Res> {
       {int? id,
       String? name,
       String? slug,
-      int? gamesCount,
-      String? imageBackground});
+      int? games_count,
+      String? image_background});
 }
 
 /// @nodoc
@@ -338,8 +338,8 @@ class _$DeveloperCopyWithImpl<$Res, $Val extends Developer>
     Object? id = freezed,
     Object? name = freezed,
     Object? slug = freezed,
-    Object? gamesCount = freezed,
-    Object? imageBackground = freezed,
+    Object? games_count = freezed,
+    Object? image_background = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -354,13 +354,13 @@ class _$DeveloperCopyWithImpl<$Res, $Val extends Developer>
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String?,
-      gamesCount: freezed == gamesCount
-          ? _value.gamesCount
-          : gamesCount // ignore: cast_nullable_to_non_nullable
+      games_count: freezed == games_count
+          ? _value.games_count
+          : games_count // ignore: cast_nullable_to_non_nullable
               as int?,
-      imageBackground: freezed == imageBackground
-          ? _value.imageBackground
-          : imageBackground // ignore: cast_nullable_to_non_nullable
+      image_background: freezed == image_background
+          ? _value.image_background
+          : image_background // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -378,8 +378,8 @@ abstract class _$$DeveloperImplCopyWith<$Res>
       {int? id,
       String? name,
       String? slug,
-      int? gamesCount,
-      String? imageBackground});
+      int? games_count,
+      String? image_background});
 }
 
 /// @nodoc
@@ -396,8 +396,8 @@ class __$$DeveloperImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? slug = freezed,
-    Object? gamesCount = freezed,
-    Object? imageBackground = freezed,
+    Object? games_count = freezed,
+    Object? image_background = freezed,
   }) {
     return _then(_$DeveloperImpl(
       id: freezed == id
@@ -412,13 +412,13 @@ class __$$DeveloperImplCopyWithImpl<$Res>
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String?,
-      gamesCount: freezed == gamesCount
-          ? _value.gamesCount
-          : gamesCount // ignore: cast_nullable_to_non_nullable
+      games_count: freezed == games_count
+          ? _value.games_count
+          : games_count // ignore: cast_nullable_to_non_nullable
               as int?,
-      imageBackground: freezed == imageBackground
-          ? _value.imageBackground
-          : imageBackground // ignore: cast_nullable_to_non_nullable
+      image_background: freezed == image_background
+          ? _value.image_background
+          : image_background // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -431,8 +431,8 @@ class _$DeveloperImpl implements _Developer {
       {required this.id,
       required this.name,
       required this.slug,
-      required this.gamesCount,
-      required this.imageBackground});
+      required this.games_count,
+      required this.image_background});
 
   factory _$DeveloperImpl.fromJson(Map<String, dynamic> json) =>
       _$$DeveloperImplFromJson(json);
@@ -444,13 +444,13 @@ class _$DeveloperImpl implements _Developer {
   @override
   final String? slug;
   @override
-  final int? gamesCount;
+  final int? games_count;
   @override
-  final String? imageBackground;
+  final String? image_background;
 
   @override
   String toString() {
-    return 'Developer(id: $id, name: $name, slug: $slug, gamesCount: $gamesCount, imageBackground: $imageBackground)';
+    return 'Developer(id: $id, name: $name, slug: $slug, games_count: $games_count, image_background: $image_background)';
   }
 
   @override
@@ -461,16 +461,16 @@ class _$DeveloperImpl implements _Developer {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.slug, slug) || other.slug == slug) &&
-            (identical(other.gamesCount, gamesCount) ||
-                other.gamesCount == gamesCount) &&
-            (identical(other.imageBackground, imageBackground) ||
-                other.imageBackground == imageBackground));
+            (identical(other.games_count, games_count) ||
+                other.games_count == games_count) &&
+            (identical(other.image_background, image_background) ||
+                other.image_background == image_background));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, name, slug, gamesCount, imageBackground);
+      Object.hash(runtimeType, id, name, slug, games_count, image_background);
 
   @JsonKey(ignore: true)
   @override
@@ -491,8 +491,8 @@ abstract class _Developer implements Developer {
       {required final int? id,
       required final String? name,
       required final String? slug,
-      required final int? gamesCount,
-      required final String? imageBackground}) = _$DeveloperImpl;
+      required final int? games_count,
+      required final String? image_background}) = _$DeveloperImpl;
 
   factory _Developer.fromJson(Map<String, dynamic> json) =
       _$DeveloperImpl.fromJson;
@@ -504,9 +504,9 @@ abstract class _Developer implements Developer {
   @override
   String? get slug;
   @override
-  int? get gamesCount;
+  int? get games_count;
   @override
-  String? get imageBackground;
+  String? get image_background;
   @override
   @JsonKey(ignore: true)
   _$$DeveloperImplCopyWith<_$DeveloperImpl> get copyWith =>

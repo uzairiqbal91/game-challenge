@@ -11,6 +11,11 @@ class AppStrings {
   static const String pleaseWait = "Please Wait ... ";
   static const String noDataFound = "No Dat Found";
 
+  static const String description = "Description";
+  static const String genres = "Genres";
+  static const String developers = "Developers";
+  static const String publishers = "Publishers";
+
 }
 
 class ApiStrings {
