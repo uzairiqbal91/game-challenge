@@ -10,7 +10,13 @@ This Flutter app is a game challenge that leverages the power of Flutter for cre
 
 - **TDD (Test-Driven Development):** The app is developed using TDD practices, ensuring that the codebase is robust, reliable, and thoroughly tested.
 
+## Get Started 
 
+- Clone this project
+- Run `flutter pub get`
+- Run `flutter pub run build_runner build --delete-conflicting-outputs` or `dart run build_runner build --delete-conflicting-outputs` to generate freezes files
+- Run Test `flutter test`
+- To generate mock class `dart pub run build_runner build`
 
 ## Feature ✅
 
