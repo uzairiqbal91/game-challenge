@@ -3,8 +3,8 @@ import 'package:gamechallange/core/constants/app_constatns.dart';
 import 'package:gamechallange/data/models/games_response.dart';
 import 'package:gamechallange/domain/repository/game_repository.dart';
 
-import '../../core/error.dart';
-import '../../core/usecase.dart';
+import '../../../core/error.dart';
+import '../../../core/usecase.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'game_usecase.freezed.dart';

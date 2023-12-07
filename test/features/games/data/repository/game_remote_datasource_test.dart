@@ -8,7 +8,7 @@ import 'package:gamechallange/core/services/dio_client.dart';
 import 'package:gamechallange/core/services/list_services.dart';
 import 'package:gamechallange/data/datasources/game_remote_datasource.dart';
 import 'package:gamechallange/data/models/games_response.dart';
-import 'package:gamechallange/domain/usecase/game_usecase.dart';
+import 'package:gamechallange/domain/usecase/dashboard/game_usecase.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 
 import '../../../../helpers/json_reader.dart';

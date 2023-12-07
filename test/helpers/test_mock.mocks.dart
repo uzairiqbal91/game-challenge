@@ -8,12 +8,16 @@ import 'dart:async' as _i6;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:flutter/foundation.dart' as _i4;
 import 'package:flutter/src/widgets/framework.dart' as _i3;
-import 'package:flutter/src/widgets/notification_listener.dart' as _i10;
+import 'package:flutter/src/widgets/notification_listener.dart' as _i12;
 import 'package:gamechallange/core/error.dart' as _i7;
 import 'package:gamechallange/data/datasources/game_remote_datasource.dart'
     as _i5;
+import 'package:gamechallange/data/models/game_detail_response.dart' as _i10;
 import 'package:gamechallange/data/models/games_response.dart' as _i8;
-import 'package:gamechallange/domain/usecase/game_usecase.dart' as _i9;
+import 'package:gamechallange/domain/usecase/dashboard/game_usecase.dart'
+    as _i9;
+import 'package:gamechallange/domain/usecase/detail/game_detail_usecase.dart'
+    as _i11;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -113,6 +117,25 @@ class MockGameRemoteDatasource extends _i1.Mock
           ),
         )),
       ) as _i6.Future<_i2.Either<_i7.Failure, _i8.GamesResponse>>);
+
+  @override
+  _i6.Future<_i2.Either<_i7.Failure, _i10.GamesDetailResponse>> gameDetail(
+          _i11.GameDetailParams? gameParams) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #gameDetail,
+          [gameParams],
+        ),
+        returnValue:
+            _i6.Future<_i2.Either<_i7.Failure, _i10.GamesDetailResponse>>.value(
+                _FakeEither_0<_i7.Failure, _i10.GamesDetailResponse>(
+          this,
+          Invocation.method(
+            #gameDetail,
+            [gameParams],
+          ),
+        )),
+      ) as _i6.Future<_i2.Either<_i7.Failure, _i10.GamesDetailResponse>>);
 }
 
 /// A class which mocks [GameUseCase].
@@ -141,6 +164,34 @@ class MockGameUseCase extends _i1.Mock implements _i9.GameUseCase {
           ),
         )),
       ) as _i6.Future<_i2.Either<_i7.Failure, _i8.GamesResponse>>);
+}
+
+/// A class which mocks [GameDetailUseCase].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGameDetailUseCase extends _i1.Mock implements _i11.GameDetailUseCase {
+  MockGameDetailUseCase() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i6.Future<_i2.Either<_i7.Failure, _i10.GamesDetailResponse>> call(
+          _i11.GameDetailParams? params) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [params],
+        ),
+        returnValue:
+            _i6.Future<_i2.Either<_i7.Failure, _i10.GamesDetailResponse>>.value(
+                _FakeEither_0<_i7.Failure, _i10.GamesDetailResponse>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+      ) as _i6.Future<_i2.Either<_i7.Failure, _i10.GamesDetailResponse>>);
 }
 
 /// A class which mocks [BuildContext].
@@ -223,7 +274,7 @@ class MockBuildContext extends _i1.Mock implements _i3.BuildContext {
       );
 
   @override
-  void dispatchNotification(_i10.Notification? notification) =>
+  void dispatchNotification(_i12.Notification? notification) =>
       super.noSuchMethod(
         Invocation.method(
           #dispatchNotification,

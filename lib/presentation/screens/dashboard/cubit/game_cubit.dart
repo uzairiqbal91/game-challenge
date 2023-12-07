@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:gamechallange/domain/usecase/game_usecase.dart';
+import 'package:gamechallange/domain/usecase/dashboard/game_usecase.dart';
 
 import '../../../../core/error.dart';
 import '../../../../data/models/games_response.dart';

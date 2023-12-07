@@ -8,7 +8,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gamechallange/core/constants/app_constatns.dart';
 import 'package:gamechallange/core/di/di.dart';
 import 'package:gamechallange/data/models/games_response.dart';
-import 'package:gamechallange/domain/usecase/game_usecase.dart';
+import 'package:gamechallange/domain/usecase/dashboard/game_usecase.dart';
 import 'package:gamechallange/presentation/screens/dashboard/cubit/game_cubit.dart';
 import 'package:gamechallange/presentation/screens/dashboard/dashboard_screen.dart';
 import 'package:gamechallange/presentation/screens/dashboard/widgets/game_items_skeleton_widget.dart';

@@ -6,7 +6,7 @@ import 'package:gamechallange/presentation/screens/dashboard/dashboard_screen.da
 
 import 'core/constants/app_constatns.dart';
 import 'core/di/di.dart';
-import 'domain/usecase/game_usecase.dart';
+import 'domain/usecase/dashboard/game_usecase.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

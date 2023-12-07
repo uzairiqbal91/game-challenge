@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gamechallange/data/models/games_response.dart';
-import 'package:gamechallange/domain/usecase/game_usecase.dart';
+import 'package:gamechallange/domain/usecase/dashboard/game_usecase.dart';
 import 'package:gamechallange/presentation/screens/dashboard/widgets/game_item_widget.dart';
 import 'package:gamechallange/presentation/screens/dashboard/widgets/game_items_skeleton_widget.dart';
 import 'package:gamechallange/presentation/widgets/base_widget.dart';
