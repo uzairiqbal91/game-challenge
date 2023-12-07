@@ -17,7 +17,7 @@
     - [x] BLoC test
 - [x] Pagination
 
-## All Test Passinng ✅
+## All Test Passed ✅
 <img width="472" alt="Screenshot 2023-12-07 at 6 04 14 PM" src="https://github.com/uzairiqbal91/game-challenge/assets/25804523/65f4b388-07de-47d3-b9d9-1074e494b22d">
 
 
