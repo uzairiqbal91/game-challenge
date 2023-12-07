@@ -7,7 +7,7 @@ import 'package:mockito/annotations.dart';
 @GenerateMocks([
   GameRemoteDatasource,
   GameUseCase,
-  GameDetailUseCase
+  GameDetailUseCase,
 ])
 @GenerateNiceMocks([MockSpec<BuildContext>()])
 void main() {}

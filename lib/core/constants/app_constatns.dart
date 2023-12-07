@@ -15,6 +15,7 @@ class AppStrings {
   static const String genres = "Genres";
   static const String developers = "Developers";
   static const String publishers = "Publishers";
+  static const String apiKey = "API_KEY";
 
 }
 

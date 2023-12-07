@@ -45,6 +45,8 @@ dependencies:
   dio:
   logger:
   flutter_widget_from_html:
+  flutter_dotenv:
+
 
 
 
@@ -77,6 +79,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/.env
 
   # To add assets to your application, add an assets section, like this:
   # assets:

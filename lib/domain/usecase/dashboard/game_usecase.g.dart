@@ -13,7 +13,7 @@ _$GameParamsImpl _$$GameParamsImplFromJson(Map<String, dynamic> json) =>
       platforms: json['platforms'] as int? ?? ApiStrings.defaultPlatform,
       dates: json['dates'] as String? ?? ApiStrings.defaultDates,
       ordering: json['ordering'] as String? ?? ApiStrings.defaultOrdering,
-      key: json['key'] as String? ?? '686b03ffc0154abb837a21404851f3a7',
+      key: json['key'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$GameParamsImplToJson(_$GameParamsImpl instance) =>

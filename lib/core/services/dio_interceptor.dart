@@ -13,14 +13,14 @@ class DioInterceptor extends Interceptor  {
     String headerMessage = "";
     options.headers.forEach((k, v) => headerMessage += '► $k: $v\n');
 
-    try {
-
-      options.queryParameters.forEach(
-        (k, v) => debugPrint(
-          '► $k: $v',
-        ),
-      );
-    } catch (_) {}
+    // try {
+    //
+    //   options.queryParameters.forEach(
+    //     (k, v) => debugPrint(
+    //       '► $k: $v',
+    //     ),
+    //   );
+    // } catch (_) {}
     // try {
     //
     //   var queryParam = options.queryParameters;

@@ -10,7 +10,7 @@ _$GameDetailParamsImpl _$$GameDetailParamsImplFromJson(
         Map<String, dynamic> json) =>
     _$GameDetailParamsImpl(
       id: json['id'] as int? ?? ApiStrings.defaultId,
-      key: json['key'] as String? ?? '686b03ffc0154abb837a21404851f3a7',
+      key: json['key'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$GameDetailParamsImplToJson(

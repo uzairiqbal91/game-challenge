@@ -28,7 +28,7 @@ class GameParams with _$GameParams {
     @Default(ApiStrings.defaultPlatform) int platforms,
     @Default(ApiStrings.defaultDates) String dates,
     @Default(ApiStrings.defaultOrdering) String ordering,
-    @Default('686b03ffc0154abb837a21404851f3a7') String key,
+    @Default('') String key,
 
   }) = _GameParams;
 

@@ -25,7 +25,7 @@ class GameDetailUseCase extends UseCase<GamesDetailResponse, GameDetailParams> {
 class GameDetailParams with _$GameDetailParams {
   const factory GameDetailParams({
     @Default(ApiStrings.defaultId) int id,
-    @Default('686b03ffc0154abb837a21404851f3a7') String key,
+    @Default('') String key,
 
   }) = _GameDetailParams;
 

@@ -2,15 +2,18 @@ import 'dart:convert';
 
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gamechallange/core/di/di.dart';
 import 'package:gamechallange/core/error.dart';
+import 'package:gamechallange/core/helper/common.dart';
 import 'package:gamechallange/data/models/game_detail_response.dart';
 import 'package:gamechallange/data/models/games_response.dart';
 import 'package:gamechallange/domain/usecase/dashboard/game_usecase.dart';
 import 'package:gamechallange/domain/usecase/detail/game_detail_usecase.dart';
 import 'package:gamechallange/presentation/screens/dashboard/cubit/game_cubit.dart';
 import 'package:gamechallange/presentation/screens/detail/cubit/game_detail_cubit.dart';
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../../../../../helpers/json_reader.dart';
@@ -22,14 +25,15 @@ void main() {
   late MockGameDetailUseCase mockGameDetailUseCase;
   late GamesDetailResponse gamesDetailResponse;
 
-  const dummyGameRequest1 = GameDetailParams();
-  const dummyGameRequest2 = GameDetailParams(id: 100000);
+  late GameDetailParams dummyGameRequest1 ;
+  late GameDetailParams dummyGameRequest2 ;
   const errorMessage = "";
 
   /// Initialize data
   setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
 
+    await dotenv.load(fileName: "assets/.env");
     await serviceLocator(isUnitTest: true);
 
     gamesDetailResponse = GamesDetailResponse.fromJson(
@@ -37,6 +41,8 @@ void main() {
     );
     mockGameDetailUseCase = MockGameDetailUseCase();
     gameDetailCubit = GameDetailCubit(mockGameDetailUseCase);
+    dummyGameRequest1 = GameDetailParams(key: getApiKey);
+    dummyGameRequest2 = GameDetailParams(id: 100000,key: getApiKey);
   });
 
   /// Dispose bloc
@@ -92,7 +98,7 @@ void main() {
       return gameDetailCubit;
     },
     act: (GameDetailCubit gameCubit) =>
-        gameCubit.fetchGameDetail(dummyGameRequest2),
+        gameCubit.fetchGameDetail(dummyGameRequest2,isKey: false),
     wait: const Duration(milliseconds: 100),
     expect: () => [
       const GameDetailState.empty(),

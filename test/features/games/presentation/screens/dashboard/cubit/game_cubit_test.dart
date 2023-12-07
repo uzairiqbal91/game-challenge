@@ -2,9 +2,11 @@ import 'dart:convert';
 
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gamechallange/core/di/di.dart';
 import 'package:gamechallange/core/error.dart';
+import 'package:gamechallange/core/helper/common.dart';
 import 'package:gamechallange/data/models/games_response.dart';
 import 'package:gamechallange/domain/usecase/dashboard/game_usecase.dart';
 import 'package:gamechallange/presentation/screens/dashboard/cubit/game_cubit.dart';
@@ -21,14 +23,14 @@ void main() {
   late MockGameUseCase mockGameUseCase;
   late GamesResponse gamesResponse;
 
-  const dummyGameRequest1 = GameParams();
-  const dummyGameRequest2 = GameParams(page: 2);
+  late GameParams dummyGameRequest1 ;
+  late GameParams dummyGameRequest2 ;
   const errorMessage = "";
 
   /// Initialize data
   setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
-
+    await dotenv.load(fileName: "assets/.env");
     await serviceLocator(isUnitTest: true);
 
     gamesResponse = GamesResponse.fromJson(
@@ -36,6 +38,8 @@ void main() {
     );
     mockGameUseCase = MockGameUseCase();
     gameCubit = GameCubit(mockGameUseCase);
+    dummyGameRequest1 = GameParams(key: getApiKey);
+    dummyGameRequest2 = GameParams(key: getApiKey,page: 2,);
   });
 
   /// Dispose bloc
@@ -72,7 +76,7 @@ void main() {
 
       return gameCubit;
     },
-    act: (GameCubit gameCubit) => gameCubit.fetchGames(dummyGameRequest2),
+    act: (GameCubit gameCubit) => gameCubit.fetchGames(dummyGameRequest2,isKey: false),
     wait: const Duration(milliseconds: 100),
     expect: () => [
       GameState.success(gamesResponse),
@@ -107,7 +111,7 @@ void main() {
 
       return gameCubit;
     },
-    act: (GameCubit gameCubit) => gameCubit.fetchGames(dummyGameRequest2),
+    act: (GameCubit gameCubit) => gameCubit.fetchGames(dummyGameRequest2,isKey: false),
     wait: const Duration(milliseconds: 100),
     expect: () => [
       const GameState.empty(),

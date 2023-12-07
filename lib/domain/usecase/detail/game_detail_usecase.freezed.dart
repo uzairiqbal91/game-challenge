@@ -108,9 +108,7 @@ class __$$GameDetailParamsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$GameDetailParamsImpl implements _GameDetailParams {
-  const _$GameDetailParamsImpl(
-      {this.id = ApiStrings.defaultId,
-      this.key = '686b03ffc0154abb837a21404851f3a7'});
+  const _$GameDetailParamsImpl({this.id = ApiStrings.defaultId, this.key = ''});
 
   factory _$GameDetailParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GameDetailParamsImplFromJson(json);

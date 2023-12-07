@@ -170,7 +170,7 @@ class _$GameParamsImpl implements _GameParams {
       this.platforms = ApiStrings.defaultPlatform,
       this.dates = ApiStrings.defaultDates,
       this.ordering = ApiStrings.defaultOrdering,
-      this.key = '686b03ffc0154abb837a21404851f3a7'});
+      this.key = ''});
 
   factory _$GameParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GameParamsImplFromJson(json);

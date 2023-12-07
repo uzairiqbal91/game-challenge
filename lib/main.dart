@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:gamechallange/presentation/screens/dashboard/cubit/game_cubit.dart';
 import 'package:gamechallange/presentation/screens/dashboard/dashboard_screen.dart';
 import 'package:gamechallange/presentation/screens/detail/cubit/game_detail_cubit.dart';
@@ -11,12 +12,12 @@ import 'domain/usecase/dashboard/game_usecase.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: "assets/.env");
   await serviceLocator();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-
   runApp(const MyApp());
 }
 
