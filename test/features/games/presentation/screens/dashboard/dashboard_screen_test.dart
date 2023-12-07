@@ -15,8 +15,8 @@ import 'package:gamechallange/presentation/screens/dashboard/widgets/game_items_
 import 'package:gamechallange/presentation/widgets/empty.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../../helpers/json_reader.dart';
-import '../../../../helpers/paths.dart';
+import '../../../../../helpers/json_reader.dart';
+import '../../../../../helpers/paths.dart';
 
 class MockGameCubit extends MockCubit<GameState> implements GameCubit {}
 

@@ -29,9 +29,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
   void initState() {
     super.initState();
 
-     context
-        .read<GameDetailCubit>()
-        .fetchGameDetail(const GameDetailParams(id: 437049));
 
     _scrollController.addListener(() async {
       if (_scrollController.position.atEdge) {
