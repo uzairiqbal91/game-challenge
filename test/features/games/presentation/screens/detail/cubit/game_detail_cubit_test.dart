@@ -98,7 +98,7 @@ void main() {
       return gameDetailCubit;
     },
     act: (GameDetailCubit gameCubit) =>
-        gameCubit.fetchGameDetail(dummyGameRequest2,isKey: false),
+        gameCubit.fetchGameDetail(dummyGameRequest2),
     wait: const Duration(milliseconds: 100),
     expect: () => [
       const GameDetailState.empty(),

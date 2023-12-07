@@ -15,19 +15,17 @@ class GameCubit extends Cubit<GameState> {
   GameCubit(this._gameUseCase) : super(const _Loading());
   final GameUseCase _gameUseCase;
 
-  Future<void> fetchGames(GameParams gameParams,{bool isKey = true}) async {
+  Future<void> fetchGames(GameParams gameParams) async {
     /// Only show loading in 1 page
-    await _fetchData(gameParams,isKey);
+    await _fetchData(gameParams);
   }
 
-  Future<void> refreshGames(GameParams gameParams,{bool isKey = true}) async {
-    await _fetchData(gameParams,isKey);
+  Future<void> refreshGames(GameParams gameParams) async {
+    await _fetchData(gameParams);
   }
 
-  Future<void> _fetchData(GameParams gameParams,bool isKey) async {
-    if(isKey){
-      gameParams = GameParams(key: getApiKey);
-    }
+  Future<void> _fetchData(GameParams gameParams) async {
+    gameParams = GameParams(key: getApiKey,page: gameParams.page);
 
     if (gameParams.page == 1) {
       emit(const _Loading());

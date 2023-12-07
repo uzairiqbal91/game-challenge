@@ -76,7 +76,7 @@ void main() {
 
       return gameCubit;
     },
-    act: (GameCubit gameCubit) => gameCubit.fetchGames(dummyGameRequest2,isKey: false),
+    act: (GameCubit gameCubit) => gameCubit.fetchGames(dummyGameRequest2),
     wait: const Duration(milliseconds: 100),
     expect: () => [
       GameState.success(gamesResponse),
@@ -111,7 +111,7 @@ void main() {
 
       return gameCubit;
     },
-    act: (GameCubit gameCubit) => gameCubit.fetchGames(dummyGameRequest2,isKey: false),
+    act: (GameCubit gameCubit) => gameCubit.fetchGames(dummyGameRequest2),
     wait: const Duration(milliseconds: 100),
     expect: () => [
       const GameState.empty(),

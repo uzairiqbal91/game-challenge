@@ -15,15 +15,13 @@ class GameDetailCubit extends Cubit<GameDetailState> {
   GameDetailCubit(this._gameUseCase) : super(const _Loading());
   final GameDetailUseCase _gameUseCase;
 
-  Future<void> fetchGameDetail(GameDetailParams gameParams,{bool isKey = true}) async {
+  Future<void> fetchGameDetail(GameDetailParams gameParams) async {
     /// Only show loading in 1 page
-    await _fetchData(gameParams,isKey);
+    await _fetchData(gameParams);
   }
 
-  Future<void> _fetchData(GameDetailParams gameParams , bool isKey) async {
-    if(isKey){
-      gameParams = GameDetailParams(key: getApiKey);
-    }
+  Future<void> _fetchData(GameDetailParams gameParams) async {
+    gameParams = GameDetailParams(key: getApiKey, id: gameParams.id);
 
     final data = await _gameUseCase.call(gameParams);
     data.fold(
