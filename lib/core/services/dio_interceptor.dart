@@ -21,25 +21,25 @@ class DioInterceptor extends Interceptor  {
         ),
       );
     } catch (_) {}
-    try {
-
-      var queryParam = options.queryParameters;
-      log.d(
-        options.uri.toString()
-      );
-
-      log.d(
-        // ignore: unnecessary_null_comparison
-        "REQUEST ► ︎ ${options.method != null ? options.method.toUpperCase() : 'METHOD'} ${"${options.baseUrl}${options.path}"}\n\n"
-        "Headers:\n"
-        "$headerMessage\n"
-        "❖ QueryParameters : $queryParam \n"
-
-      );
-    } catch (e, stackTrace) {
-      log.e("Failed to extract json request $e");
-
-    }
+    // try {
+    //
+    //   var queryParam = options.queryParameters;
+    //   log.d(
+    //     options.uri.toString()
+    //   );
+    //
+    //   log.d(
+    //     // ignore: unnecessary_null_comparison
+    //     "REQUEST ► ︎ ${options.method != null ? options.method.toUpperCase() : 'METHOD'} ${"${options.baseUrl}${options.path}"}\n\n"
+    //     "Headers:\n"
+    //     "$headerMessage\n"
+    //     "❖ QueryParameters : $queryParam \n"
+    //
+    //   );
+    // } catch (e, stackTrace) {
+    //   log.e("Failed to extract json request $e");
+    //
+    // }
 
     super.onRequest(options, handler);
   }
@@ -60,16 +60,16 @@ class DioInterceptor extends Interceptor  {
     String headerMessage = "";
     response.headers.forEach((k, v) => headerMessage += '► $k: $v\n');
 
-    const JsonEncoder encoder = JsonEncoder.withIndent('  ');
-    final String prettyJson = encoder.convert(response.data);
-    log.d(
-      // ignore: unnecessary_null_comparison
-      "◀ ︎RESPONSE ${response.statusCode} ${response.requestOptions != null ? (response.requestOptions.baseUrl + response.requestOptions.path) : 'URL'}\n\n"
-      "Headers:\n"
-      "$headerMessage\n"
-      "❖ Results : \n"
-      "Response: $prettyJson",
-    );
+    // const JsonEncoder encoder = JsonEncoder.withIndent('  ');
+    // final String prettyJson = encoder.convert(response.data);
+    // log.d(
+    //   // ignore: unnecessary_null_comparison
+    //   "◀ ︎RESPONSE ${response.statusCode} ${response.requestOptions != null ? (response.requestOptions.baseUrl + response.requestOptions.path) : 'URL'}\n\n"
+    //   "Headers:\n"
+    //   "$headerMessage\n"
+    //   "❖ Results : \n"
+    //   "Response: $prettyJson",
+    // );
     super.onResponse(response, handler);
   }
 }
