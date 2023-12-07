@@ -1,16 +1,23 @@
-# gamechallange
+# Flutter Game Challenge App with BLoC/Cubit Architecture
 
-A new Flutter project.
+This Flutter app is a game challenge that leverages the power of Flutter for creating engaging and interactive games. The project follows the principles of **Flutter Clean Architecture with TDD (Test-Driven Development)**, and the business logic is implemented using the BLoC (Business Logic Component) or Cubit pattern.
 
-## Getting Started
+- **Game Challenge:** The app includes a game challenge that demonstrates the capabilities of Flutter in creating dynamic and visually appealing games.
 
-This project is a starting point for a Flutter application.
+- **BLoC/Cubit Architecture:** The project adopts the BLoC or Cubit architecture for managing the app's state and business logic, providing a scalable and maintainable solution.
 
-A few resources to get you started if this is your first Flutter project:
+- **Clean Architecture:** The app follows the principles of Clean Architecture, separating concerns into layers to achieve maintainability, testability, and scalability.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **TDD (Test-Driven Development):** The app is developed using TDD practices, ensuring that the codebase is robust, reliable, and thoroughly tested.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+## Feature ✅
+
+- [x] BLoC State Management
+- [x] **Clean Architecture with TDD**
+    - [x] Unit Test
+    - [x] Widget Test
+    - [x] BLoC test
+- [x] Pagination
+
