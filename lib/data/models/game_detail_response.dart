@@ -14,9 +14,9 @@ class GamesDetailResponse with _$GamesDetailResponse {
     required int id,
     required String? name,
     required String? description,
-    required List<Developer> developers,
-    required List<Developer> genres,
-    required List<Developer> publishers,
+    required List<Developer>? developers,
+    required List<Developer>? genres,
+    required List<Developer>? publishers,
   }) = _GamesDetailResponse;
 
   factory GamesDetailResponse.fromJson(Map<String, dynamic> json) => _$GamesDetailResponseFromJson(json);
@@ -25,7 +25,7 @@ class GamesDetailResponse with _$GamesDetailResponse {
 @freezed
 class Developer with _$Developer {
   const factory Developer({
-    required int id,
+    required int? id,
     required String? name,
     required String? slug,
     required int? gamesCount,

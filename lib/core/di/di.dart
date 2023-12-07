@@ -2,6 +2,8 @@ import 'package:gamechallange/data/datasources/game_remote_datasource.dart';
 import 'package:gamechallange/data/repository/game_repository_impl.dart';
 import 'package:gamechallange/domain/repository/game_repository.dart';
 import 'package:gamechallange/domain/usecase/dashboard/game_usecase.dart';
+import 'package:gamechallange/domain/usecase/detail/game_detail_usecase.dart';
+import 'package:gamechallange/presentation/screens/detail/cubit/game_detail_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../presentation/screens/dashboard/cubit/game_cubit.dart';
@@ -43,9 +45,11 @@ void _useCase() {
 
     /// Games
   sl.registerLazySingleton(() => GameUseCase(sl()));
+  sl.registerLazySingleton(() => GameDetailUseCase(sl()));
 }
 
 void _cubit() {
   sl.registerFactory(() => GameCubit(sl()));
+  sl.registerFactory(() => GameDetailCubit(sl()));
 }
 

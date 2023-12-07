@@ -23,9 +23,9 @@ mixin _$GamesDetailResponse {
   int get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  List<Developer> get developers => throw _privateConstructorUsedError;
-  List<Developer> get genres => throw _privateConstructorUsedError;
-  List<Developer> get publishers => throw _privateConstructorUsedError;
+  List<Developer>? get developers => throw _privateConstructorUsedError;
+  List<Developer>? get genres => throw _privateConstructorUsedError;
+  List<Developer>? get publishers => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,9 +43,9 @@ abstract class $GamesDetailResponseCopyWith<$Res> {
       {int id,
       String? name,
       String? description,
-      List<Developer> developers,
-      List<Developer> genres,
-      List<Developer> publishers});
+      List<Developer>? developers,
+      List<Developer>? genres,
+      List<Developer>? publishers});
 }
 
 /// @nodoc
@@ -64,9 +64,9 @@ class _$GamesDetailResponseCopyWithImpl<$Res, $Val extends GamesDetailResponse>
     Object? id = null,
     Object? name = freezed,
     Object? description = freezed,
-    Object? developers = null,
-    Object? genres = null,
-    Object? publishers = null,
+    Object? developers = freezed,
+    Object? genres = freezed,
+    Object? publishers = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -81,18 +81,18 @@ class _$GamesDetailResponseCopyWithImpl<$Res, $Val extends GamesDetailResponse>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      developers: null == developers
+      developers: freezed == developers
           ? _value.developers
           : developers // ignore: cast_nullable_to_non_nullable
-              as List<Developer>,
-      genres: null == genres
+              as List<Developer>?,
+      genres: freezed == genres
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
-              as List<Developer>,
-      publishers: null == publishers
+              as List<Developer>?,
+      publishers: freezed == publishers
           ? _value.publishers
           : publishers // ignore: cast_nullable_to_non_nullable
-              as List<Developer>,
+              as List<Developer>?,
     ) as $Val);
   }
 }
@@ -109,9 +109,9 @@ abstract class _$$GamesDetailResponseImplCopyWith<$Res>
       {int id,
       String? name,
       String? description,
-      List<Developer> developers,
-      List<Developer> genres,
-      List<Developer> publishers});
+      List<Developer>? developers,
+      List<Developer>? genres,
+      List<Developer>? publishers});
 }
 
 /// @nodoc
@@ -128,9 +128,9 @@ class __$$GamesDetailResponseImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = freezed,
     Object? description = freezed,
-    Object? developers = null,
-    Object? genres = null,
-    Object? publishers = null,
+    Object? developers = freezed,
+    Object? genres = freezed,
+    Object? publishers = freezed,
   }) {
     return _then(_$GamesDetailResponseImpl(
       id: null == id
@@ -145,18 +145,18 @@ class __$$GamesDetailResponseImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      developers: null == developers
+      developers: freezed == developers
           ? _value._developers
           : developers // ignore: cast_nullable_to_non_nullable
-              as List<Developer>,
-      genres: null == genres
+              as List<Developer>?,
+      genres: freezed == genres
           ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
-              as List<Developer>,
-      publishers: null == publishers
+              as List<Developer>?,
+      publishers: freezed == publishers
           ? _value._publishers
           : publishers // ignore: cast_nullable_to_non_nullable
-              as List<Developer>,
+              as List<Developer>?,
     ));
   }
 }
@@ -168,9 +168,9 @@ class _$GamesDetailResponseImpl implements _GamesDetailResponse {
       {required this.id,
       required this.name,
       required this.description,
-      required final List<Developer> developers,
-      required final List<Developer> genres,
-      required final List<Developer> publishers})
+      required final List<Developer>? developers,
+      required final List<Developer>? genres,
+      required final List<Developer>? publishers})
       : _developers = developers,
         _genres = genres,
         _publishers = publishers;
@@ -184,28 +184,34 @@ class _$GamesDetailResponseImpl implements _GamesDetailResponse {
   final String? name;
   @override
   final String? description;
-  final List<Developer> _developers;
+  final List<Developer>? _developers;
   @override
-  List<Developer> get developers {
+  List<Developer>? get developers {
+    final value = _developers;
+    if (value == null) return null;
     if (_developers is EqualUnmodifiableListView) return _developers;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_developers);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<Developer> _genres;
+  final List<Developer>? _genres;
   @override
-  List<Developer> get genres {
+  List<Developer>? get genres {
+    final value = _genres;
+    if (value == null) return null;
     if (_genres is EqualUnmodifiableListView) return _genres;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_genres);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<Developer> _publishers;
+  final List<Developer>? _publishers;
   @override
-  List<Developer> get publishers {
+  List<Developer>? get publishers {
+    final value = _publishers;
+    if (value == null) return null;
     if (_publishers is EqualUnmodifiableListView) return _publishers;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_publishers);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -260,9 +266,9 @@ abstract class _GamesDetailResponse implements GamesDetailResponse {
       {required final int id,
       required final String? name,
       required final String? description,
-      required final List<Developer> developers,
-      required final List<Developer> genres,
-      required final List<Developer> publishers}) = _$GamesDetailResponseImpl;
+      required final List<Developer>? developers,
+      required final List<Developer>? genres,
+      required final List<Developer>? publishers}) = _$GamesDetailResponseImpl;
 
   factory _GamesDetailResponse.fromJson(Map<String, dynamic> json) =
       _$GamesDetailResponseImpl.fromJson;
@@ -274,11 +280,11 @@ abstract class _GamesDetailResponse implements GamesDetailResponse {
   @override
   String? get description;
   @override
-  List<Developer> get developers;
+  List<Developer>? get developers;
   @override
-  List<Developer> get genres;
+  List<Developer>? get genres;
   @override
-  List<Developer> get publishers;
+  List<Developer>? get publishers;
   @override
   @JsonKey(ignore: true)
   _$$GamesDetailResponseImplCopyWith<_$GamesDetailResponseImpl> get copyWith =>
@@ -291,7 +297,7 @@ Developer _$DeveloperFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Developer {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get slug => throw _privateConstructorUsedError;
   int? get gamesCount => throw _privateConstructorUsedError;
@@ -309,7 +315,7 @@ abstract class $DeveloperCopyWith<$Res> {
       _$DeveloperCopyWithImpl<$Res, Developer>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String? name,
       String? slug,
       int? gamesCount,
@@ -329,17 +335,17 @@ class _$DeveloperCopyWithImpl<$Res, $Val extends Developer>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = freezed,
     Object? slug = freezed,
     Object? gamesCount = freezed,
     Object? imageBackground = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -369,7 +375,7 @@ abstract class _$$DeveloperImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String? name,
       String? slug,
       int? gamesCount,
@@ -387,17 +393,17 @@ class __$$DeveloperImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = freezed,
     Object? slug = freezed,
     Object? gamesCount = freezed,
     Object? imageBackground = freezed,
   }) {
     return _then(_$DeveloperImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -432,7 +438,7 @@ class _$DeveloperImpl implements _Developer {
       _$$DeveloperImplFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final String? name;
   @override
@@ -482,7 +488,7 @@ class _$DeveloperImpl implements _Developer {
 
 abstract class _Developer implements Developer {
   const factory _Developer(
-      {required final int id,
+      {required final int? id,
       required final String? name,
       required final String? slug,
       required final int? gamesCount,
@@ -492,7 +498,7 @@ abstract class _Developer implements Developer {
       _$DeveloperImpl.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   String? get name;
   @override

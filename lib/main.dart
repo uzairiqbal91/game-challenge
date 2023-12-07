@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gamechallange/presentation/screens/dashboard/cubit/game_cubit.dart';
 import 'package:gamechallange/presentation/screens/dashboard/dashboard_screen.dart';
+import 'package:gamechallange/presentation/screens/detail/cubit/game_detail_cubit.dart';
 
 import 'core/constants/app_constatns.dart';
 import 'core/di/di.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => sl<GameCubit>()..fetchGames(const GameParams())),
+        BlocProvider(create: (_) => sl<GameDetailCubit>()),
       ],
       child: MaterialApp(
         title: AppStrings.appName,

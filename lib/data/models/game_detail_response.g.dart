@@ -12,14 +12,14 @@ _$GamesDetailResponseImpl _$$GamesDetailResponseImplFromJson(
       id: json['id'] as int,
       name: json['name'] as String?,
       description: json['description'] as String?,
-      developers: (json['developers'] as List<dynamic>)
-          .map((e) => Developer.fromJson(e as Map<String, dynamic>))
+      developers: (json['developers'] as List<dynamic>?)
+          ?.map((e) => Developer.fromJson(e as Map<String, dynamic>))
           .toList(),
-      genres: (json['genres'] as List<dynamic>)
-          .map((e) => Developer.fromJson(e as Map<String, dynamic>))
+      genres: (json['genres'] as List<dynamic>?)
+          ?.map((e) => Developer.fromJson(e as Map<String, dynamic>))
           .toList(),
-      publishers: (json['publishers'] as List<dynamic>)
-          .map((e) => Developer.fromJson(e as Map<String, dynamic>))
+      publishers: (json['publishers'] as List<dynamic>?)
+          ?.map((e) => Developer.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -36,7 +36,7 @@ Map<String, dynamic> _$$GamesDetailResponseImplToJson(
 
 _$DeveloperImpl _$$DeveloperImplFromJson(Map<String, dynamic> json) =>
     _$DeveloperImpl(
-      id: json['id'] as int,
+      id: json['id'] as int?,
       name: json['name'] as String?,
       slug: json['slug'] as String?,
       gamesCount: json['gamesCount'] as int?,
