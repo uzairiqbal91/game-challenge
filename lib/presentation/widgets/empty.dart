@@ -12,9 +12,12 @@ class Empty extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(Icons.error_outline),
+        const Icon(Icons.error_outline,size: 40,),
+        const SizedBox(height: 10,),
         Text(
           errorMessage ?? AppStrings.NO_DATA_FOUND,
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 20),
         ),
       ],
     );
